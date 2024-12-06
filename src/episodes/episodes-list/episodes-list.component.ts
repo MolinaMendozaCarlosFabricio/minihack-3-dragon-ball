@@ -21,6 +21,6 @@ export class EpisodesListComponent implements OnInit {
   }
 
   viewCharacters(episodeId: number): void {
-    this.Router.navigate(['/episode-characters', episodeId]);
+    this.Router.navigate(['/characters', episodeId]);
   }
 }
