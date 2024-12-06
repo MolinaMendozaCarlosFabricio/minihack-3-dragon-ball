@@ -2,12 +2,10 @@ import { Component, Input } from '@angular/core';
 import { CharacterSerialization } from '../interface/character-serialization';
 
 @Component({
-  selector: 'app-card-personaje',
-  templateUrl: './card-personaje.component.html',
-  styleUrl: './card-personaje.component.css'
+  selector: 'app-carta-personaje',
+  templateUrl: './carta-personaje.component.html',
+  styleUrl: './carta-personaje.component.css'
 })
-export class CardPersonajeComponent {
+export class CartaPersonajeComponent {
   @Input() pg: CharacterSerialization | null = null;
-
-  
 }

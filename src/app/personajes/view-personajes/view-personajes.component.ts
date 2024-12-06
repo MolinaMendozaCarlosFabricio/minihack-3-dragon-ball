@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CharacterService } from '../service/character.service';
 import { CharacterSerialization } from '../interface/character-serialization';
 import { ActivatedRoute } from '@angular/router';
+import { RickAndMortyService } from '../../../episodes/service';
 
 @Component({
   selector: 'app-view-personajes',
@@ -10,16 +11,35 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ViewPersonajesComponent implements OnInit {
   id_episode_selected: string | null = "";
+  id_episode: number = 0
   pgs_list: CharacterSerialization[] = [];
   url_pgs: string[] = [];
 
-  constructor(private characterServices: CharacterService, private route: ActivatedRoute){}
+  constructor(
+    private characterServices: CharacterService, 
+    private route: ActivatedRoute,
+    private episodeServices: RickAndMortyService
+  ){}
 
   ngOnInit(): void {
+    this.get_episode();
   }
 
   get_episode(){
     this.id_episode_selected = this.route.snapshot.paramMap.get('id');
+    if(this.id_episode_selected){
+      this.id_episode = parseInt(this.id_episode_selected);
+      this.episodeServices.getCharactersByEpisode(this.id_episode).subscribe(
+        response => {
+          console.log("Episodio obtenido:", response);
+          this.url_pgs = response.characters;
+          this.get_characters_by_episode();
+        },
+        error => console.log("Error:", error)
+      );
+    } else {
+      console.log("Episodio no encontrado :(")
+    }
   }
 
   get_characters_by_episode(){
@@ -32,5 +52,6 @@ export class ViewPersonajesComponent implements OnInit {
         error => console.log("Error:", error)
       );
     }
+    console.log(this.pgs_list);
   }
 }

@@ -1,1 +1,15 @@
-<p>view-personajes works!</p>
+<main>
+    <div *ngFor="let pg of pgs_list">
+        <p>Nombre: {{pg?.name}}</p>
+        <p>Género: {{pg?.gender}} </p>
+        <p>Especie: {{pg?.species}}</p>
+        <p>Origen: {{pg?.location?.name}} </p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <img [src]="pg?.image">
+    </div>
+</main>
