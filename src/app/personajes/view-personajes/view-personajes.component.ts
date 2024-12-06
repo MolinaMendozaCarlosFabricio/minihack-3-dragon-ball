@@ -54,4 +54,27 @@ export class ViewPersonajesComponent implements OnInit {
     }
     console.log(this.pgs_list);
   }
+
+  back(){
+    this.id_episode =- 1;
+    this.episodeServices.getCharactersByEpisode(this.id_episode).subscribe(
+      response => {
+        console.log("Episodio obtenido:", response);
+        this.url_pgs = response.characters;
+        this.get_characters_by_episode();
+      },
+      error => console.log("Error:", error)
+    );
+  }
+  next(){
+    this.id_episode =+ 1;
+    this.episodeServices.getCharactersByEpisode(this.id_episode).subscribe(
+      response => {
+        console.log("Episodio obtenido:", response);
+        this.url_pgs = response.characters;
+        this.get_characters_by_episode();
+      },
+      error => console.log("Error:", error)
+    );
+  }
 }

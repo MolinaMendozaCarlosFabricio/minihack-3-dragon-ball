@@ -1,15 +1,5 @@
 <main>
-    <div *ngFor="let pg of pgs_list">
-        <p>Nombre: {{pg?.name}}</p>
-        <p>Género: {{pg?.gender}} </p>
-        <p>Especie: {{pg?.species}}</p>
-        <p>Origen: {{pg?.location?.name}} </p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <img [src]="pg?.image">
-    </div>
+    <app-card-personaje *ngFor="let pg of pgs_list" [pg]="pg"></app-card-personaje>
+    <button (click)="back()" *ngIf="id_episode >= 0">Atras</button>
+    <button (click)="next()" *ngIf="id_episode <= 51">Siguiente</button>
 </main>
