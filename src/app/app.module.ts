@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { EpisodesModule } from '../episodes/episodes.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { PersonajesModule } from './personajes/personajes.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,6 +15,7 @@ import { CommonModule } from '@angular/common';
     BrowserModule,
     AppRoutingModule,
     EpisodesModule,
+    PersonajesModule,
     HttpClientModule,
     CommonModule
     
