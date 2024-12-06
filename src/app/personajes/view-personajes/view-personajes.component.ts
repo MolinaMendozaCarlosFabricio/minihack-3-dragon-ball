@@ -43,6 +43,7 @@ export class ViewPersonajesComponent implements OnInit {
   }
 
   get_characters_by_episode(){
+    this.pgs_list = []
     for(let i: number = 0; i < this.url_pgs.length; i++){
       this.characterServices.get_by_id(this.url_pgs[i]).subscribe(
         response => {
@@ -59,6 +60,7 @@ export class ViewPersonajesComponent implements OnInit {
     this.id_episode =- 1;
     this.episodeServices.getCharactersByEpisode(this.id_episode).subscribe(
       response => {
+        this.url_pgs = []
         console.log("Episodio obtenido:", response);
         this.url_pgs = response.characters;
         this.get_characters_by_episode();
@@ -70,6 +72,7 @@ export class ViewPersonajesComponent implements OnInit {
     this.id_episode =+ 1;
     this.episodeServices.getCharactersByEpisode(this.id_episode).subscribe(
       response => {
+        this.url_pgs = [];
         console.log("Episodio obtenido:", response);
         this.url_pgs = response.characters;
         this.get_characters_by_episode();
