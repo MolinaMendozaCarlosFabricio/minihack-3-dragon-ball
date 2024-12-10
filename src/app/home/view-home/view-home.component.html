@@ -1,7 +1,8 @@
 <main>
+    <div class="buttons">
     <button (click)="open_ae()">Todos los episodios</button>
     <button (click)="open_fe()">Episodios favoritos</button>
-
+</div>
     <div *ngIf="open_all_episodes">
         <h1>Todos los episodios</h1>
         <app-episodes-list></app-episodes-list>

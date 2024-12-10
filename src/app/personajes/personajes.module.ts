@@ -4,6 +4,7 @@ import { ViewPersonajesComponent } from './view-personajes/view-personajes.compo
 import { CardPersonajeComponent } from './card-personaje/card-personaje.component';
 import { FormsModule } from '@angular/forms';
 import { ModalPersonajeComponent } from './modal-personaje/modal-personaje.component';
+import { RouterLink } from '@angular/router';
 
 
 
@@ -15,7 +16,8 @@ import { ModalPersonajeComponent } from './modal-personaje/modal-personaje.compo
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    RouterLink
   ],
   exports: [
     ViewPersonajesComponent
