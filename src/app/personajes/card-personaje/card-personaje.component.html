@@ -5,5 +5,5 @@
     <p>Especie: {{pg?.species}}</p>
     <p>Origen: {{pg?.location?.name}} </p>
     <button (click)="modal.open()">Ver más</button>
-    <app-modal-personaje [pg]="pg" #modal></app-modal-personaje>
+    <app-modal-personaje [pg]="pg" #modal [id_episode]="id_episode"></app-modal-personaje>
 </main>

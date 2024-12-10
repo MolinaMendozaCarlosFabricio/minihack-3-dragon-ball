@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { CharacterSerialization } from '../interface/character-serialization';
 import { LocationService } from '../service/location.service';
 import { LocationSerialization } from '../interface/location-serialization';
+import { FavouriteEpisodesService } from '../service/favourite-episodes.service';
 
 @Component({
   selector: 'app-modal-personaje',
@@ -10,10 +11,11 @@ import { LocationSerialization } from '../interface/location-serialization';
 })
 export class ModalPersonajeComponent implements OnInit {
   @Input() pg: CharacterSerialization | null = null;
+  @Input() id_episode: number = 0;
   location: LocationSerialization | null = null;
   isVisible: boolean = false;
 
-  constructor(private locationServices: LocationService){}
+  constructor(private locationServices: LocationService, private favouriteEpisodesServices: FavouriteEpisodesService){}
 
   open(){
     this.isVisible = true;
@@ -36,5 +38,9 @@ export class ModalPersonajeComponent implements OnInit {
         error => console.log("Error:", error)
       )
     }
+  }
+
+  add_favourite_episode(){
+    this.favouriteEpisodesServices.put(this.id_episode);
   }
 }

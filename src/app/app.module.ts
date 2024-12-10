@@ -8,6 +8,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { PersonajesModule } from './personajes/personajes.module';
 import { RowEpisodeComponent } from '../episodes/row-episode/row-episode.component';
+import { HomeModule } from './home/home.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +18,7 @@ import { RowEpisodeComponent } from '../episodes/row-episode/row-episode.compone
     AppRoutingModule,
     EpisodesModule,
     PersonajesModule,
+    HomeModule,
     HttpClientModule,
     CommonModule
     

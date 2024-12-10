@@ -7,5 +7,6 @@ import { CharacterSerialization } from '../interface/character-serialization';
   styleUrl: './card-personaje.component.css'
 })
 export class CardPersonajeComponent {
-  @Input() pg: CharacterSerialization | null = null;  
+  @Input() pg: CharacterSerialization | null = null;
+  @Input() id_episode: number = 0;
 }

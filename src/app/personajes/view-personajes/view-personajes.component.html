@@ -1,7 +1,7 @@
 <main>
     <h1>Episode {{id_episode}} </h1>
     <section>
-        <app-card-personaje *ngFor="let pg of pgs_list" [pg]="pg"></app-card-personaje>
+        <app-card-personaje *ngFor="let pg of pgs_list" [pg]="pg" [id_episode]="id_episode"></app-card-personaje>
     </section>
     
     <div>
