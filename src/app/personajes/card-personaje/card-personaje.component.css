@@ -1,0 +1,27 @@
+main {
+    max-width: 300px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+main img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+main p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+main p:first-of-type {
+    font-weight: bold;
+    font-size: 16px;
+}

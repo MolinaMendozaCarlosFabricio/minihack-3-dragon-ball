@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { RickAndMortyService } from '../service'
 import { Router } from '@angular/router';
 
@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./episodes-list.component.css']
 })
 export class EpisodesListComponent implements OnInit {
+  @Input() id_episodes!: number[];
   episodes: any[] = [];
   characters: any[] = [];
   selectedEpisode: string | null = null;
@@ -15,9 +16,22 @@ export class EpisodesListComponent implements OnInit {
   constructor(private rickAndMortyService: RickAndMortyService, private Router: Router) {}
 
   ngOnInit(): void {
-    this.rickAndMortyService.getEpisodes().subscribe((response) => {
-      this.episodes = response.results;
-    });
+    if(!this.id_episodes){
+      this.rickAndMortyService.getEpisodes().subscribe((response) => {
+        this.episodes = response.results;
+      });
+    } else {
+      this.episodes = [];
+      for(let i: number = 0; i < this.id_episodes.length; i++){
+        this.rickAndMortyService.getCharactersByEpisode(this.id_episodes[i]).subscribe(
+          response => {
+            console.log("It's ok");
+            this.episodes.push(response);
+          },
+          error => console.log("Error:", error)
+        )
+      }
+    }
   }
 
   viewCharacters(episodeId: number): void {
