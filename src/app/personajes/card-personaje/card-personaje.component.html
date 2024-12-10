@@ -1,13 +1,9 @@
 <main>
+    <img [src]="pg?.image">
     <p>Nombre: {{pg?.name}}</p>
     <p>Género: {{pg?.gender}} </p>
     <p>Especie: {{pg?.species}}</p>
     <p>Origen: {{pg?.location?.name}} </p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <img [src]="pg?.image">
+    <button (click)="modal.open()">Ver más</button>
+    <app-modal-personaje [pg]="pg" #modal [id_episode]="id_episode"></app-modal-personaje>
 </main>

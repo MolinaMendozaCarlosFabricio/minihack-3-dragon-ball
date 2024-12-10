@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CharacterService } from '../service/character.service';
 import { CharacterSerialization } from '../interface/character-serialization';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RickAndMortyService } from '../../../episodes/service';
 
 @Component({
@@ -18,7 +18,8 @@ export class ViewPersonajesComponent implements OnInit {
   constructor(
     private characterServices: CharacterService, 
     private route: ActivatedRoute,
-    private episodeServices: RickAndMortyService
+    private episodeServices: RickAndMortyService,
+    private router: Router
   ){}
 
   ngOnInit(): void {
@@ -57,7 +58,7 @@ export class ViewPersonajesComponent implements OnInit {
   }
 
   back(){
-    this.id_episode =- 1;
+    this.id_episode -= 1;
     this.episodeServices.getCharactersByEpisode(this.id_episode).subscribe(
       response => {
         this.url_pgs = []
@@ -69,7 +70,8 @@ export class ViewPersonajesComponent implements OnInit {
     );
   }
   next(){
-    this.id_episode =+ 1;
+    this.id_episode += 1;
+    // this.router.navigate(['/characters', this.id_episode]);
     this.episodeServices.getCharactersByEpisode(this.id_episode).subscribe(
       response => {
         this.url_pgs = [];

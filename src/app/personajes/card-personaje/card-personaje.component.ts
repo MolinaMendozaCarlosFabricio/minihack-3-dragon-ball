@@ -8,6 +8,5 @@ import { CharacterSerialization } from '../interface/character-serialization';
 })
 export class CardPersonajeComponent {
   @Input() pg: CharacterSerialization | null = null;
-
-  
+  @Input() id_episode: number = 0;
 }

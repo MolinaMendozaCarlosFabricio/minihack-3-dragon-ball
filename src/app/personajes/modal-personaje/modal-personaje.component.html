@@ -1,0 +1,20 @@
+<div class="modal-overlay" *ngIf="isVisible" (click)="close()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <h2>Personaje: {{pg!.name}} </h2>
+        <p>Estado: {{pg!.status}} </p>
+        <p>Género: {{pg!.gender}} </p>
+        <p>Especie: {{pg!.species}}</p>
+        <p>Tipo: {{pg!.type}} </p>
+        <p>Fecha de creación: {{pg!.created}} </p>
+        <p>Origen: {{pg!.origin.name}} </p>
+        <div>
+            <h3>Ubicación actual: {{pg?.location?.name}} </h3>
+            <p>Tipo: {{location?.type}} </p>
+            <p>Dimensión: {{location?.dimension}} </p>
+            <p>Fecha de creación: {{location?.created}} </p>
+        </div>
+        <img [src]="pg!.image">
+        <button (click)="add_favourite_episode()">Me gustó este episodio</button>
+        <button (click)="close()">Close</button>
+    </div>
+</div>

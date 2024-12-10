@@ -1,5 +1,11 @@
 <main>
-    <app-card-personaje *ngFor="let pg of pgs_list" [pg]="pg"></app-card-personaje>
-    <button (click)="back()" *ngIf="id_episode >= 0">Atras</button>
-    <button (click)="next()" *ngIf="id_episode <= 51">Siguiente</button>
+    <h1>Episode {{id_episode}} </h1>
+    <section>
+        <app-card-personaje *ngFor="let pg of pgs_list" [pg]="pg" [id_episode]="id_episode"></app-card-personaje>
+    </section>
+    
+    <div>
+        <button (click)="back()" *ngIf="id_episode > 1">Atras</button>
+        <button (click)="next()" *ngIf="id_episode < 52">Siguiente</button>
+    </div>
 </main>
