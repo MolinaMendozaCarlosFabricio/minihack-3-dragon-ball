@@ -11,6 +11,9 @@
         </tr>
       </thead>
       <tbody>
+        <!--
+        <app-row-episode *ngFor="let episode of episodes" [episode]="episode"></app-row-episode>
+        -->
         <tr *ngFor="let episode of episodes; let i = index">
           <td>{{ episode.name }}</td>
           <td>{{ episode.air_date }}</td>

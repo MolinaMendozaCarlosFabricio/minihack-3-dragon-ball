@@ -1,0 +1,47 @@
+tr {
+    transition: background-color 0.3s;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f1f1f1;
+  }
+  
+  tr:hover {
+    background-color: #e8f6ff;
+  }
+  
+  td {
+    padding: 12px 15px;
+    font-size: 14px;
+    color: #333;
+    word-wrap: break-word;
+  }
+  
+  td a {
+    color: #4a90e2;
+    text-decoration: none;
+  }
+  
+  td a:hover {
+    text-decoration: underline;
+  }
+  
+
+  button {
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #357ab8;
+  }
+  
+  button:focus {
+    outline: none;
+  }

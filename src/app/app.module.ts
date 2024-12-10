@@ -7,6 +7,7 @@ import { EpisodesModule } from '../episodes/episodes.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { PersonajesModule } from './personajes/personajes.module';
+import { RowEpisodeComponent } from '../episodes/row-episode/row-episode.component';
 @NgModule({
   declarations: [
     AppComponent,

@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ViewPersonajesComponent } from './view-personajes/view-personajes.component';
 import { CardPersonajeComponent } from './card-personaje/card-personaje.component';
-import { CartaPersonajeComponent } from './carta-personaje/carta-personaje.component';
 import { FormsModule } from '@angular/forms';
+import { ModalPersonajeComponent } from './modal-personaje/modal-personaje.component';
 
 
 
@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     ViewPersonajesComponent,
     CardPersonajeComponent,
-    CartaPersonajeComponent
+    ModalPersonajeComponent,
   ],
   imports: [
     CommonModule,
