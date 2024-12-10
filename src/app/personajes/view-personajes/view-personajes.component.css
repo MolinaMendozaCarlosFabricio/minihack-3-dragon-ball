@@ -1,8 +1,51 @@
 h1{
     text-align: center;
+    margin: 0;
+    border: 0;
 }
 section{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 30px;
+}
+
+.moveButtons{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap:30px;
+    padding: 15px;
+
+}
+
+.moveButtons button{
+    background-color: #1460b7;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.homeButton{
+    background-color: white;
+    margin: 0;
+    border: 0;
+    cursor: pointer;
+    padding: 10px;
+    border: 2px solid black;
+}
+
+.homeButton span{
+    font-size: 40px;
+}
+
+.header{
+    display: flex;
+    gap: 42%;
+    margin-top: 10px;
+    border: 0;
 }

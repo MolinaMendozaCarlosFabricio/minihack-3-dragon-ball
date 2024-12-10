@@ -1,6 +1,9 @@
 <div class="modal-overlay" *ngIf="isVisible" (click)="close()">
     <div class="modal-content" (click)="$event.stopPropagation()">
         <h2>Personaje: {{pg!.name}} </h2>
+        <div class="dataCharacter">
+        <div class="img"><img [src]="pg!.image"></div>
+        <div class="data">
         <p>Estado: {{pg!.status}} </p>
         <p>Género: {{pg!.gender}} </p>
         <p>Especie: {{pg!.species}}</p>
@@ -12,9 +15,9 @@
             <p>Tipo: {{location?.type}} </p>
             <p>Dimensión: {{location?.dimension}} </p>
             <p>Fecha de creación: {{location?.created}} </p>
-        </div>
-        <img [src]="pg!.image">
-        <button (click)="add_favourite_episode()">Me gustó este episodio</button>
-        <button (click)="close()">Close</button>
+        </div></div></div>
+        <div class="actionButtons">
+        <button (click)="add_favourite_episode()" > Me gusta</button>
+        <button (click)="close()">Close</button></div>
     </div>
 </div>
